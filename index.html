@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!-- style link -->
+    <link rel="stylesheet" href="style.css"/>
+    <!-- google fonts link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- font awesome link -->
+<script src="https://kit.fontawesome.com/a673862905.js" crossorigin="anonymous"></script>
+
+    <title>My App</title>
+  </head>
+  <body>
+    
+    <!-- header -->
+    <header>
+      <div class="spanHolder" onclick="navDisplay()">
+        <span class="span1"></span>
+        <span class="span2"></span>
+        <span class="span3"></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#products" class="nav-list-1">Products</a></li>
+          <li><a href="#about" class="nav-list-2">About</a></li>
+          <li><a href="#contact" class="nav-list-3">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- sec1 -->
+    <section class="sec-1">
+      <h1 class="intro">Welcome</h1>
+      <p>This is My App. where you will find <strong>wonderous </strong> things....</p>
+      <button class="intro-btn" type="submit"><a href="features.html">Our Features</a></button>
+    </section>
+    
+    <!-- sec2 -->
+    <section class="sec-2" id="products">
+      <h2>Choose from Our List of Products</h2>
+      <p>To understand more about what is to be offered bellow you, click the <strong>top right </strong> icon on the cards to learn more</p>
+      <button type="submit">Products</button>
+    </section>
+    
+    <!-- sec3 -->
+    <section class="sec-3" id="about">
+      <h2>Want to know more ABOUT US?</h2>
+      <p>It is truly a wonderful blessing sharing the <strong>passion</strong> to drive people along in their journey to happines, a sense of well-being, and peace. Click the button below to learn about our <strong>goals </strong></p>
+      <button type="submit">About Us</button>
+    </section>
+      
+      <!-- Sec4 -->
+    <section class="sec-4" id="contact">
+      <h2>Get in touch with us</h2>
+      <p class="sec-4-para">Please feel free to navigate to our <strong>CONTACT PAGE </strong> and message us any time you please</p>
+      <button type="submit">Get In Touch</button>
+      <a href="#article-more" class="more-btn-link">
+      <i href="#card" id="more-btn" class="fa-solid fa-circle-arrow-down" onclick="cardDisplay()"></i></a>
+      <p class="more-sec-4-tag">MORE</p>
+    </section>
+    
+    <!-- hidden cards -->
+    
+    <article class="article-more">
+      
+      
+      <div class="cards-wrapper">
+   
+          <div class="card-1" id="card">
+            <h3>The Popular</h3>
+          </div>
+          <div class="card-1" id="card">
+            <h3>The Popular</h3>
+          </div>
+          
+          <div class="card-2" id="card">
+            <h3>The Basic</h3>
+          </div>
+          <div class="card-2" id="card">
+            <h3>The Basic</h3>
+          </div>
+          
+          <div class="card-3" id="card">
+            <h3>The Best</h3>
+          </div>
+          <div class="card-3" id="card">
+            <h3>The Best</h3>
+          </div>
+          
+          <div class="card-4" id="card">
+            <h3>The VIP</h3>
+          </div>
+          <div class="card-4" id="card">
+            <h3>The VIP</h3>
+          </div>
+        </div>
+        
+    </article>
+    
+    
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

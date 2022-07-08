@@ -1,4 +1,4 @@
-
+const vh = document.querySelector('.sec-1').clientHeight;
  // card display functiom that animates the more button at the bottom of the page and displays the cards section
 const firstArticle = document.querySelector('.article-more');
 const moreButton = document.querySelector('#more-btn');
@@ -45,6 +45,8 @@ const cardDisplay = () => {
 
 // scroll effects//
 const sectionElAnimations = () => {
+  
+  console.log(window.scrollY)
   //nav variables
   const nav = document.querySelector('nav');
 
@@ -230,10 +232,12 @@ cardBgBtn.forEach(btn => {
   //body 1
   const featuresBtn = document.querySelector('.intro-btn');
   const productBtn = document.querySelector('.products-btn');
+  const aboutBtn = document.querySelector('.about-btn');
   const allBodies = document.querySelectorAll('#bodies');
   const bodyOne = document.querySelector('.body-1');
   const bodyTwo = document.querySelector('.body-2');
-  const bodyThree = document.querySelector('.body-3')
+  const bodyThree = document.querySelector('.body-3');
+  const bodyFour = document.querySelector('.body-4');
   
   allBodies.forEach(body => {
     body.style.transition = '750ms';
@@ -241,54 +245,95 @@ cardBgBtn.forEach(btn => {
   
 
   productBtn.addEventListener('click', () => {
-    bodyThree.style.height = '100vh';
-    bodyThree.style.right = '0';
-    bodyOne.style.transform = 'translateX(100vw)';
+    bodyThree.style.display = 'block';
+    window.scrollTo(0, 0);
+    bodyThree.style.top = '0vh';
     setTimeout(() => {
-      bodyThree.style.top = '0vh';
-      bodyOne.style.height = '100vh';
+      bodyThree.style.right = '0';
+      bodyOne.style.transform = 'translateX(100vw)';
     }, 750);
+    setTimeout(() => {
+      bodyOne.style.display = 'none';
+    }, 1500);
     
     navListThree()
   });
   
   featuresBtn.addEventListener('click', () => {
-    bodyTwo.style.height = 'max-content';
-    bodyTwo.style.right = '0';
-    bodyOne.style.transform = 'translateX(-100vw)';
+    bodyTwo.style.display = 'block';
     setTimeout(() => {
-      bodyOne.style.height = '100vh';
+      bodyTwo.style.right = '0';
+      bodyOne.style.transform = 'translateX(-100vw)';
     }, 750);
+    setTimeout(() => {
+      bodyOne.style.display = 'none';
+    }, 1500)
     
     navListTwo();
-  })
+  });
+  
+  aboutBtn.addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    bodyFour.style.display = 'block';
+    setTimeout(() => {
+      bodyFour.style.right = '0';
+      bodyOne.style.transform = 'translateX(-100vw)';
+    }, 750);
+    setTimeout(() => {
+      bodyOne.style.display = 'none';
+    }, 1500)
+    
+    navListTwo();
+  });
+  
+ 
   
   //body 2
   const goBackToMainFrom2 = document.querySelector('.back-to-main-from-2');
   const goBackToMainFrom3 =
   document.querySelector('.back-to-main-from-3');
+  const goBackToMainFrom4 = document.querySelector('.back-to-main-from-4');
   
   goBackToMainFrom2.addEventListener('click', () => {
-    bodyTwo.style.right = '-100vw';
-    bodyOne.style.transform = 'translateX(0)';
-    bodyOne.style.height = 'unset';
-    
+    window.scrollTo(0, 0);
+    bodyOne.style.display = 'block';
     setTimeout(() => {
-      bodyTwo.style.height = '100vh';
+      bodyTwo.style.right = '-100vw';
+      bodyOne.style.transform = 'translateX(0)';
     }, 750);
+    setTimeout(() => {
+      bodyTwo.style.display = 'none';
+    }, 1500)
     
     navListMain();
   });
   
   goBackToMainFrom3.addEventListener('click', () => {
-    bodyThree.style.right = '100vw';
-    bodyOne.style.transform = 'translateX(0)';
-    bodyOne.style.height = 'unset';
-    
+    window.scrollTo(0, 0);
+    bodyOne.style.display = 'block';
     setTimeout(() => {
-      bodyThree.style.height = '100vh';
-      bodyThree.style.top = '100vh';
+      bodyThree.style.right = '100vw';
+      bodyOne.style.transform = 'translateX(0)';
     }, 750);
+    setTimeout(() => {
+      window.scrollTo(0, vh );
+      bodyThree.style.display = 'none';
+    }, 1500)
+    
+    navListMain();
+  });
+  
+  goBackToMainFrom4.addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    bodyOne.style.display = 'block';
+    setTimeout(() => {
+      bodyFour.style.right = '-100vw';
+      bodyOne.style.transform = 'translateX(0)';
+    }, 750);
+    setTimeout(() => {
+      window.scrollTo(0, vh * 2);
+      bodyFour.style.display = 'none';
+    }, 1500)
     
     navListMain();
   });
